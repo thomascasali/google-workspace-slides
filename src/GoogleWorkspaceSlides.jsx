@@ -26,11 +26,11 @@ const Slide02_Agenda = () => (
     </div>
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {[
-        { title: "Modulo 1: Introduzione", time: "1h", desc: "Panoramica Google Workspace e configurazione account", color: "blue", icon: "🚀" },
-        { title: "Modulo 2: Strumenti Core", time: "4h", desc: "Drive, Gmail, Calendar, Chat - I fondamentali", color: "green", icon: "🛠️" },
-        { title: "Modulo 3: Creazione Contenuti", time: "3h", desc: "Docs, Sheets, Slides, Forms", color: "purple", icon: "📝" },
-        { title: "Modulo 4: Didattica Avanzata", time: "2h", desc: "Meet, Classroom, Sites, Keep, Tasks", color: "orange", icon: "🎓" },
-        { title: "Modulo 5: Best Practices", time: "1h", desc: "Integrazione, sicurezza, casi d'uso", color: "red", icon: "🔒" }
+        { title: "Modulo 1: Introduzione", desc: "Panoramica Google Workspace e configurazione account", color: "blue", icon: "🚀" },
+        { title: "Modulo 2: Strumenti Core", desc: "Drive, Gmail, Calendar, Chat - I fondamentali", color: "green", icon: "🛠️" },
+        { title: "Modulo 3: Creazione Contenuti", desc: "Docs, Sheets, Slides, Forms", color: "purple", icon: "📝" },
+        { title: "Modulo 4: Didattica Avanzata", desc: "Meet, Classroom, Sites, Keep, Tasks", color: "orange", icon: "🎓" },
+        { title: "Modulo 5: Best Practices", desc: "Integrazione, sicurezza, casi d'uso", color: "red", icon: "🔒" }
       ].map((module, index) => (
         <div key={index} className={`bg-${module.color}-50 p-8 rounded-2xl border-l-8 border-${module.color}-400 shadow-lg hover:shadow-xl transition-shadow`}>
           <div className="flex justify-between items-start mb-4">
@@ -38,7 +38,6 @@ const Slide02_Agenda = () => (
               <span className="text-3xl">{module.icon}</span>
               <h3 className={`text-2xl font-bold text-${module.color}-800`}>{module.title}</h3>
             </div>
-            <span className={`bg-${module.color}-200 text-${module.color}-800 px-4 py-2 rounded-full text-lg font-semibold`}>{module.time}</span>
           </div>
           <p className={`text-${module.color}-700 text-lg`}>{module.desc}</p>
         </div>

@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# Google Workspace per l'Educazione
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Slide interattive per il corso di formazione sui strumenti Google Workspace dedicato ai docenti di scuola secondaria.
 
-## Available Scripts
+## 📚 Contenuto del Corso
 
-In the project directory, you can run:
+Il corso è strutturato in 5 moduli principali:
 
-### `npm start`
+- **Modulo 1: Introduzione** - Panoramica Google Workspace e configurazione account
+- **Modulo 2: Strumenti Core** - Drive, Gmail, Calendar, Chat - I fondamentali
+- **Modulo 3: Creazione Contenuti** - Docs, Sheets, Slides, Forms
+- **Modulo 4: Didattica Avanzata** - Meet, Classroom, Sites, Keep, Tasks
+- **Modulo 5: Best Practices** - Integrazione, sicurezza, casi d'uso
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Demo Online
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Le slide sono disponibili online su GitHub Pages:
+[https://thomascasali.github.io/google-workspace-slides](https://thomascasali.github.io/google-workspace-slides)
 
-### `npm test`
+## 🛠️ Tecnologie Utilizzate
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React 19** - Framework per l'interfaccia utente
+- **Tailwind CSS** - Framework CSS per lo styling
+- **Lucide React** - Libreria di icone
+- **GitHub Pages** - Hosting delle slide
 
-### `npm run build`
+## 💻 Sviluppo Locale
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisiti
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js (versione 14 o superiore)
+- npm o yarn
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installazione
 
-### `npm run eject`
+1. Clona il repository:
+```bash
+git clone https://github.com/thomascasali/google-workspace-slides.git
+cd google-workspace-slides
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Installa le dipendenze:
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Avvia il server di sviluppo:
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+L'applicazione sarà disponibile su [http://localhost:3000](http://localhost:3000).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Build per Produzione
 
-## Learn More
+Per creare una build ottimizzata per la produzione:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm run build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Deploy su GitHub Pages
 
-### Code Splitting
+Per pubblicare le modifiche su GitHub Pages:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm run deploy
+```
 
-### Analyzing the Bundle Size
+## 📁 Struttura del Progetto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+google-workspace-slides/
+├── public/
+│   ├── index.html
+│   └── assets/
+├── src/
+│   ├── GoogleWorkspaceSlides.jsx  # Componente principale con tutte le slide
+│   ├── App.js                     # Componente principale dell'app
+│   └── index.js                   # Entry point
+├── package.json
+└── README.md
+```
 
-### Making a Progressive Web App
+## 🎯 Funzionalità
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Navigazione intuitiva** - Frecce direzionali e indicatori di progresso
+- **Responsive design** - Ottimizzato per desktop, tablet e mobile
+- **Contenuti interattivi** - Esempi pratici e casi d'uso reali
+- **Codice colore** - Ogni modulo ha un tema cromatico distintivo
+- **Icone visive** - Interfaccia user-friendly con iconografia moderna
 
-### Advanced Configuration
+## 📝 Personalizzazione
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Per modificare il contenuto delle slide, edita il file `src/GoogleWorkspaceSlides.jsx`. Ogni slide è un componente React separato per facilitare la manutenzione.
 
-### Deployment
+## 📄 Licenza
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Questo progetto è stato creato per scopi educativi e formativi.
 
-### `npm run build` fails to minify
+## 👨‍💻 Autore
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thomas Casali
+
+---
+
+*Creato con ❤️ per la formazione digitale degli insegnanti*
