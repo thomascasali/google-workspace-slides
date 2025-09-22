@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.18c65289.css",
-    "main.js": "/static/js/main.f15839dc.js",
-    "static/js/453.a9ab6448.chunk.js": "/static/js/453.a9ab6448.chunk.js",
-    "index.html": "/index.html",
-    "main.18c65289.css.map": "/static/css/main.18c65289.css.map",
-    "main.f15839dc.js.map": "/static/js/main.f15839dc.js.map",
-    "453.a9ab6448.chunk.js.map": "/static/js/453.a9ab6448.chunk.js.map"
+    "main.css": "/google-workspace-slides/static/css/main.18c65289.css",
+    "main.js": "/google-workspace-slides/static/js/main.6e1f568b.js",
+    "static/js/453.a9ab6448.chunk.js": "/google-workspace-slides/static/js/453.a9ab6448.chunk.js",
+    "index.html": "/google-workspace-slides/index.html",
+    "main.18c65289.css.map": "/google-workspace-slides/static/css/main.18c65289.css.map",
+    "main.6e1f568b.js.map": "/google-workspace-slides/static/js/main.6e1f568b.js.map",
+    "453.a9ab6448.chunk.js.map": "/google-workspace-slides/static/js/453.a9ab6448.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.18c65289.css",
-    "static/js/main.f15839dc.js"
+    "static/js/main.6e1f568b.js"
   ]
 }
