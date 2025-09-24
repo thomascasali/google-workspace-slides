@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Home, Mail, Folder, FileText, BarChart3, Presentation, FileQuestion, Calendar, Video, MessageCircle, Globe, GraduationCap, StickyNote, Shield, Users, BookOpen, Settings, CheckCircle, Lightbulb, Share2, Cloud, Search, Edit, Play, Menu, Star, Clock, Filter, Archive, Send, Eye, MessageSquare, Lock, Smartphone, Monitor, Tablet, Download, Upload, Link, Copy, Trash2, AlertCircle, Zap, Target, Bell, Mic, Camera, Plus, Minus, RotateCcw, History, Database, PieChart, TrendingUp, Layers, GitBranch, Wifi, WifiOff, Palette, Image, MousePointer, Hand, Trophy, Rocket, Repeat, Heart, Laptop } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Home, Mail, Folder, FileText, BarChart3, Presentation, FileQuestion, Calendar, Video, MessageCircle, Globe, GraduationCap, StickyNote, Shield, Users, BookOpen, Settings, CheckCircle, Lightbulb, Share2, Cloud, Search, Edit, Play, Star, Clock, Filter, Archive, Eye, MessageSquare, Lock, Smartphone, Monitor, Download, Upload, Link, Copy, AlertCircle, Zap, Target, Bell, Mic, Camera, Plus, RotateCcw, History, Database, PieChart, TrendingUp, Layers, GitBranch, Wifi, WifiOff, Palette, Image, MousePointer, Hand, Trophy, Rocket, Repeat, Heart, Laptop } from 'lucide-react';
 
 
 // ===== COMPONENTI SLIDE INDIVIDUALI =====
@@ -24,13 +24,15 @@ const Slide02_Agenda = () => (
       <h2 className="text-5xl font-bold text-gray-800">Agenda del Corso</h2>
       <p className="text-2xl text-gray-600 mt-4">Struttura completa della formazione</p>
     </div>
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
       {[
         { title: "Modulo 1: Introduzione", desc: "Panoramica Google Workspace e configurazione account", color: "blue", icon: "🚀" },
-        { title: "Modulo 2: Strumenti Core", desc: "Drive, Gmail, Calendar, Chat - I fondamentali", color: "green", icon: "🛠️" },
-        { title: "Modulo 3: Creazione Contenuti", desc: "Docs, Sheets, Slides, Forms", color: "purple", icon: "📝" },
-        { title: "Modulo 4: Didattica Avanzata", desc: "Meet, Classroom, Sites, Keep, Tasks", color: "orange", icon: "🎓" },
-        { title: "Modulo 5: Best Practices", desc: "Integrazione, sicurezza, casi d'uso", color: "red", icon: "🔒" }
+        { title: "Modulo 2: Gruppi Google", desc: "Organizzazione, permessi e gestione automatizzata", color: "indigo", icon: "👥" },
+        { title: "Modulo 3: Strumenti Core", desc: "Drive, Gmail, Calendar, Chat - I fondamentali", color: "green", icon: "🛠️" },
+        { title: "Modulo 4: Creazione Contenuti", desc: "Docs, Sheets, Slides, Forms", color: "purple", icon: "📝" },
+        { title: "Modulo 5: Didattica Avanzata", desc: "Meet, Classroom, Sites, Keep, Tasks", color: "orange", icon: "🎓" },
+        { title: "Modulo 6: AI per l'Educazione", desc: "Gemini for Education e NotebookLM", color: "pink", icon: "🤖" },
+        { title: "Modulo 7: Best Practices", desc: "Integrazione, sicurezza, casi d'uso avanzati", color: "red", icon: "🔒" }
       ].map((module, index) => (
         <div key={index} className={`bg-${module.color}-50 p-8 rounded-2xl border-l-8 border-${module.color}-400 shadow-lg hover:shadow-xl transition-shadow`}>
           <div className="flex justify-between items-start mb-4">
@@ -90,14 +92,15 @@ const Slide04_ToolsOverview = () => (
   <div className="space-y-8">
     <div className="text-center mb-10">
       <h2 className="text-5xl font-bold text-gray-800">Ecosistema Google Workspace</h2>
-      <p className="text-2xl text-gray-600 mt-4">12 strumenti integrati per l'educazione digitale</p>
+      <p className="text-2xl text-gray-600 mt-4">14+ strumenti integrati per l'educazione digitale moderna</p>
     </div>
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {[
-        { icon: Folder, name: "Drive", desc: "Archiviazione cloud", color: "blue", users: "Storage illimitato", priority: 1 },
-        { icon: Mail, name: "Gmail", desc: "Email professionale", color: "red", users: "15GB gratuiti", priority: 2 },
-        { icon: Calendar, name: "Calendar", desc: "Calendario condiviso", color: "blue", users: "Pianificazione integrata", priority: 3 },
-        { icon: MessageCircle, name: "Chat", desc: "Messaggistica", color: "green", users: "Comunicazione real-time", priority: 4 },
+        { icon: Users, name: "Gruppi", desc: "Organizzazione e permessi", color: "indigo", users: "Fondamenta del sistema", priority: 1 },
+        { icon: Folder, name: "Drive", desc: "Archiviazione cloud", color: "blue", users: "Storage illimitato", priority: 2 },
+        { icon: Mail, name: "Gmail", desc: "Email professionale", color: "red", users: "15GB gratuiti", priority: 3 },
+        { icon: Calendar, name: "Calendar", desc: "Calendario condiviso", color: "blue", users: "Pianificazione integrata", priority: 4 },
+        { icon: MessageCircle, name: "Chat", desc: "Messaggistica", color: "green", users: "Comunicazione real-time", priority: 5 },
         { icon: FileText, name: "Docs", desc: "Documenti di testo", color: "blue", users: "Editing collaborativo" },
         { icon: BarChart3, name: "Sheets", desc: "Fogli di calcolo", color: "green", users: "Analisi dati" },
         { icon: Presentation, name: "Slides", desc: "Presentazioni", color: "yellow", users: "Lezioni interattive" },
@@ -105,7 +108,8 @@ const Slide04_ToolsOverview = () => (
         { icon: Video, name: "Meet", desc: "Videoconferenze", color: "green", users: "Fino a 250 partecipanti" },
         { icon: GraduationCap, name: "Classroom", desc: "Gestione classi", color: "green", users: "LMS completo" },
         { icon: Globe, name: "Sites", desc: "Siti web", color: "blue", users: "Senza programmazione" },
-        { icon: StickyNote, name: "Keep", desc: "Note e promemoria", color: "yellow", users: "Sincronizzazione totale" }
+        { icon: StickyNote, name: "Keep", desc: "Note e promemoria", color: "yellow", users: "Sincronizzazione totale" },
+        { icon: Star, name: "Gemini AI", desc: "Assistente didattico", color: "purple", users: "Potenziato dall'IA" }
       ].map((tool, index) => (
         <div key={index} className={`bg-white border-3 border-gray-200 p-6 rounded-2xl hover:shadow-2xl transition-all hover:border-blue-300 hover:scale-105 ${tool.priority ? 'ring-2 ring-blue-200' : ''}`}>
           <div className="text-center">
@@ -121,9 +125,116 @@ const Slide04_ToolsOverview = () => (
   </div>
 );
 
-// ===== GOOGLE DRIVE SLIDES (5-8) =====
+// ===== GOOGLE GROUPS SLIDE (5) =====
 
-const Slide05_Drive_Intro = () => (
+const Slide05_GoogleGroups = () => (
+  <div className="space-y-8">
+    <div className="flex items-center gap-8 mb-8">
+      <Users className="w-24 h-24 text-indigo-600" />
+      <div>
+        <h1 className="text-6xl font-bold text-gray-800">Gruppi Google</h1>
+        <p className="text-3xl text-gray-600">Le fondamenta dell'organizzazione scolastica</p>
+      </div>
+    </div>
+
+    <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-8 rounded-3xl shadow-2xl mb-8">
+      <h2 className="text-4xl font-bold mb-4">Perché i Gruppi sono Essenziali?</h2>
+      <p className="text-2xl leading-relaxed">I Gruppi Google sono il sistema nervoso di Google Workspace: permettono di gestire automaticamente permessi, comunicazioni e accessi per intere classi, dipartimenti o progetti scolastici.</p>
+    </div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="bg-white p-8 rounded-2xl shadow-xl border-l-8 border-indigo-500">
+        <h3 className="text-3xl font-bold text-indigo-800 mb-6 flex items-center gap-3">
+          <Settings className="w-8 h-8" />
+          Gestione Automatizzata
+        </h3>
+        <ul className="space-y-4 text-gray-700">
+          <li className="flex items-start gap-3 text-lg">
+            <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+            <span><strong>Drive Condivisi:</strong> Accesso automatico per tutto il team docenti</span>
+          </li>
+          <li className="flex items-start gap-3 text-lg">
+            <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+            <span><strong>Chat Spaces:</strong> Spazi di lavoro per ogni classe o progetto</span>
+          </li>
+          <li className="flex items-start gap-3 text-lg">
+            <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+            <span><strong>Calendar:</strong> Eventi condivisi con gruppi specifici</span>
+          </li>
+          <li className="flex items-start gap-3 text-lg">
+            <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+            <span><strong>Gmail:</strong> Liste di distribuzione dinamiche</span>
+          </li>
+        </ul>
+      </div>
+
+      <div className="bg-white p-8 rounded-2xl shadow-xl border-l-8 border-green-500">
+        <h3 className="text-3xl font-bold text-green-800 mb-6 flex items-center gap-3">
+          <GraduationCap className="w-8 h-8" />
+          Esempi Pratici Scolastici
+        </h3>
+        <div className="space-y-4">
+          <div className="bg-green-50 p-4 rounded-xl">
+            <h4 className="font-bold text-green-800 mb-2">👨‍🏫 docenti-matematica@scuola.it</h4>
+            <p className="text-green-700">Accesso automatico a Drive "Materiali Matematica" e Chat "Dipartimento STEM"</p>
+          </div>
+          <div className="bg-blue-50 p-4 rounded-xl">
+            <h4 className="font-bold text-blue-800 mb-2">🎓 classe-3a@scuola.it</h4>
+            <p className="text-blue-700">Calendar condiviso, comunicazioni di classe, accesso risorse didattiche</p>
+          </div>
+          <div className="bg-purple-50 p-4 rounded-xl">
+            <h4 className="font-bold text-purple-800 mb-2">🚀 progetto-erasmus@scuola.it</h4>
+            <p className="text-purple-700">Collaborazione internazionale, documenti condivisi, meetings dedicati</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="bg-yellow-50 p-6 rounded-2xl border-l-6 border-yellow-400">
+        <div className="flex items-center gap-3 mb-4">
+          <Zap className="w-8 h-8 text-yellow-600" />
+          <h4 className="text-2xl font-bold text-yellow-800">Creazione Rapida</h4>
+        </div>
+        <p className="text-yellow-700 text-lg">Admin console → Gruppi → Aggiungi membri automaticamente da OU (Unità Organizzative)</p>
+      </div>
+
+      <div className="bg-blue-50 p-6 rounded-2xl border-l-6 border-blue-400">
+        <div className="flex items-center gap-3 mb-4">
+          <Shield className="w-8 h-8 text-blue-600" />
+          <h4 className="text-2xl font-bold text-blue-800">Sicurezza</h4>
+        </div>
+        <p className="text-blue-700 text-lg">Controllo granulare: chi può inviare, moderazione, privacy interna/esterna</p>
+      </div>
+
+      <div className="bg-green-50 p-6 rounded-2xl border-l-6 border-green-400">
+        <div className="flex items-center gap-3 mb-4">
+          <Target className="w-8 h-8 text-green-600" />
+          <h4 className="text-2xl font-bold text-green-800">Best Practice</h4>
+        </div>
+        <p className="text-green-700 text-lg">Nomenclatura chiara: ruolo-materia@scuola.it o classe-anno@scuola.it</p>
+      </div>
+    </div>
+
+    <div className="bg-indigo-50 p-6 rounded-2xl border-2 border-indigo-200">
+      <div className="flex items-start gap-4">
+        <Lightbulb className="w-8 h-8 text-indigo-600 flex-shrink-0 mt-1" />
+        <div>
+          <h4 className="text-2xl font-bold text-indigo-800 mb-2">💡 Pro Tip per Amministratori</h4>
+          <p className="text-indigo-700 text-lg leading-relaxed">
+            Configurate i gruppi <strong>prima</strong> di distribuire Drive condivisi e Chat Spaces.
+            Un gruppo ben strutturato vi farà risparmiare ore di gestione manuale dei permessi e renderà
+            l'esperienza utente fluida e professionale.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+// ===== GOOGLE DRIVE SLIDES (6-9) =====
+
+const Slide06_Drive_Intro = () => (
   <div className="space-y-10">
     <div className="flex items-center gap-8 mb-8">
       <Folder className="w-24 h-24 text-blue-500" />
@@ -581,8 +692,8 @@ const Slide11_Gmail_Advanced = () => (
             <p>Istituto Comprensivo "G. Verdi"</p>
             <p>📧 maria.rossi@icverdi.edu.it</p>
             <p>📞 Tel: 051-1234567</p>
-            <p>🗓️ <a href="#" className="text-blue-600">Calendario ricevimenti</a></p>
-            <p>🌐 <a href="#" className="text-blue-600">Sito classe 2A</a></p>
+            <p>🗓️ <button className="text-blue-600 hover:underline">Calendario ricevimenti</button></p>
+            <p>🌐 <button className="text-blue-600 hover:underline">Sito classe 2A</button></p>
             <p className="text-xs text-gray-500 mt-2">Orari ricevimento: Martedì 14:00-15:00</p>
           </div>
         </div>
@@ -3979,9 +4090,317 @@ const Slide42_Keep_Tasks_Productivity = () => (
   </div>
 );
 
-// ===== BEST PRACTICES E SICUREZZA (43-45) =====
+// ===== AI PER L'EDUCAZIONE (43-45) =====
 
-const Slide43_Security_Privacy = () => (
+const Slide43_AI_Overview = () => (
+  <div className="space-y-8">
+    <div className="text-center mb-10">
+      <div className="text-8xl mb-6">🤖</div>
+      <h1 className="text-6xl font-bold text-gray-800">AI per l'Educazione</h1>
+      <p className="text-3xl text-gray-600 mt-4">Gemini e NotebookLM: il futuro dell'apprendimento</p>
+    </div>
+
+    <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-10 rounded-3xl shadow-2xl mb-8">
+      <h2 className="text-4xl font-bold mb-4">La Rivoluzione dell'IA Educativa</h2>
+      <p className="text-2xl leading-relaxed">
+        Google AI trasforma il modo di insegnare e apprendere: personalizzazione intelligente,
+        feedback istantaneo e supporto nella creazione di contenuti didattici di qualità.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="bg-white p-8 rounded-2xl shadow-xl border-l-8 border-purple-500">
+        <div className="flex items-center gap-4 mb-6">
+          <div className="text-4xl">✨</div>
+          <h3 className="text-3xl font-bold text-purple-800">Gemini for Education</h3>
+        </div>
+        <ul className="space-y-4 text-gray-700">
+          <li className="flex items-start gap-3 text-lg">
+            <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+            <span><strong>Assistente didattico:</strong> Creazione lezioni, quiz, rubric personalizzate</span>
+          </li>
+          <li className="flex items-start gap-3 text-lg">
+            <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+            <span><strong>Feedback intelligente:</strong> Analisi elaborati studenti in tempo reale</span>
+          </li>
+          <li className="flex items-start gap-3 text-lg">
+            <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+            <span><strong>Differenziazione:</strong> Contenuti adattati ai diversi livelli</span>
+          </li>
+          <li className="flex items-start gap-3 text-lg">
+            <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+            <span><strong>Multimodale:</strong> Testi, immagini, video in un'unica interfaccia</span>
+          </li>
+        </ul>
+      </div>
+
+      <div className="bg-white p-8 rounded-2xl shadow-xl border-l-8 border-blue-500">
+        <div className="flex items-center gap-4 mb-6">
+          <div className="text-4xl">📚</div>
+          <h3 className="text-3xl font-bold text-blue-800">NotebookLM</h3>
+        </div>
+        <ul className="space-y-4 text-gray-700">
+          <li className="flex items-start gap-3 text-lg">
+            <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+            <span><strong>Ricerca intelligente:</strong> Analisi di libri di testo e materiali didattici</span>
+          </li>
+          <li className="flex items-start gap-3 text-lg">
+            <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+            <span><strong>Sintesi automatica:</strong> Riassunti e mappe concettuali generate</span>
+          </li>
+          <li className="flex items-start gap-3 text-lg">
+            <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+            <span><strong>Note collaborative:</strong> Condivisione insights e annotazioni</span>
+          </li>
+          <li className="flex items-start gap-3 text-lg">
+            <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+            <span><strong>Citazioni precise:</strong> Riferimenti automatici alle fonti</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div className="bg-amber-50 p-6 rounded-2xl border-l-6 border-amber-400">
+      <div className="flex items-start gap-4">
+        <AlertCircle className="w-8 h-8 text-amber-600 flex-shrink-0 mt-1" />
+        <div>
+          <h4 className="text-2xl font-bold text-amber-800 mb-2">⚖️ Etica e Responsabilità</h4>
+          <p className="text-amber-700 text-lg leading-relaxed">
+            L'AI è uno strumento potente che richiede uso consapevole: trasparenza con gli studenti,
+            rispetto della privacy, promozione del pensiero critico e supervisione umana sempre attiva.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const Slide44_Gemini_Education = () => (
+  <div className="space-y-10">
+    <div className="flex items-center gap-8 mb-8">
+      <div className="text-8xl">✨</div>
+      <div>
+        <h1 className="text-6xl font-bold text-gray-800">Gemini for Education</h1>
+        <p className="text-3xl text-gray-600">L'assistente AI del docente moderno</p>
+      </div>
+    </div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="lg:col-span-2">
+        <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl shadow-lg mb-6">
+          <h3 className="text-3xl font-bold text-purple-800 mb-6">🎯 Casi d'Uso Concreti</h3>
+          <div className="space-y-6">
+            <div className="bg-white p-6 rounded-xl shadow-sm">
+              <h4 className="text-xl font-bold text-gray-800 mb-3">📋 Pianificazione Lezioni</h4>
+              <p className="text-gray-700 mb-3">"Crea una lezione di 50 minuti su fotosintesi per classe terza, include esperimento pratico e verifica finale"</p>
+              <div className="bg-purple-50 p-3 rounded-lg">
+                <strong className="text-purple-800">Output:</strong> Struttura completa con tempi, materiali, obiettivi SMART
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-sm">
+              <h4 className="text-xl font-bold text-gray-800 mb-3">📝 Feedback Personalizzato</h4>
+              <p className="text-gray-700 mb-3">Analizza elaborati studenti fornendo feedback costruttivo e suggerimenti di miglioramento</p>
+              <div className="bg-blue-50 p-3 rounded-lg">
+                <strong className="text-blue-800">Risultato:</strong> 30 secondi invece di 10 minuti per correzione
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-sm">
+              <h4 className="text-xl font-bold text-gray-800 mb-3">🎲 Creazione Quiz</h4>
+              <p className="text-gray-700 mb-3">Genera automaticamente domande multiple choice, vero/falso, aperte da qualsiasi testo</p>
+              <div className="bg-green-50 p-3 rounded-lg">
+                <strong className="text-green-800">Vantaggio:</strong> Valutazioni diversificate e calibrate
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-6">
+        <div className="bg-white p-6 rounded-2xl shadow-lg border-l-6 border-purple-500">
+          <h4 className="text-2xl font-bold text-purple-800 mb-4 flex items-center gap-2">
+            <Zap className="w-6 h-6" />
+            Integrazione Workspace
+          </h4>
+          <ul className="space-y-3 text-purple-700">
+            <li className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-green-500" />
+              <span>Direct in Docs/Slides/Sheets</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-green-500" />
+              <span>Chat laterale sempre attiva</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-green-500" />
+              <span>Suggerimenti contestuali</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-green-500" />
+              <span>Mantiene stile documento</span>
+            </li>
+          </ul>
+        </div>
+
+        <div className="bg-white p-6 rounded-2xl shadow-lg border-l-6 border-amber-500">
+          <h4 className="text-2xl font-bold text-amber-800 mb-4 flex items-center gap-2">
+            <Shield className="w-6 h-6" />
+            Privacy & Sicurezza
+          </h4>
+          <ul className="space-y-3 text-amber-700 text-sm">
+            <li className="flex items-start gap-2">
+              <Lock className="w-4 h-4 text-green-500 mt-1" />
+              <span>Dati non usati per training</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Lock className="w-4 h-4 text-green-500 mt-1" />
+              <span>Conformità GDPR completa</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Lock className="w-4 h-4 text-green-500 mt-1" />
+              <span>Controllo admin granulare</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <Lock className="w-4 h-4 text-green-500 mt-1" />
+              <span>Audit trail completo</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-8 rounded-2xl">
+      <h4 className="text-3xl font-bold mb-4">💡 Pro Tips per Docenti</h4>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h5 className="font-bold mb-3 text-lg">🎯 Prompt Efficaci:</h5>
+          <ul className="text-sm space-y-2">
+            <li>• Specifica il livello scolastico e materia</li>
+            <li>• Indica durata e obiettivi chiari</li>
+            <li>• Richiedi esempi pratici e interattivi</li>
+            <li>• Chiedi varianti per BES/DSA</li>
+          </ul>
+        </div>
+        <div>
+          <h5 className="font-bold mb-3 text-lg">⚡ Workflow Ottimale:</h5>
+          <ul className="text-sm space-y-2">
+            <li>• Usa template ricorrenti personalizzati</li>
+            <li>• Combina AI + esperienza didattica</li>
+            <li>• Valida sempre output prima dell'uso</li>
+            <li>• Condividi best practice con colleghi</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const Slide45_NotebookLM = () => (
+  <div className="space-y-10">
+    <div className="flex items-center gap-8 mb-8">
+      <div className="text-8xl">📚</div>
+      <div>
+        <h1 className="text-6xl font-bold text-gray-800">NotebookLM</h1>
+        <p className="text-3xl text-gray-600">Il ricercatore AI per docenti e studenti</p>
+      </div>
+    </div>
+
+    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl shadow-lg mb-8">
+      <h3 className="text-4xl font-bold text-blue-800 mb-6">🔬 Trasforma la Ricerca Educativa</h3>
+      <p className="text-xl text-blue-700 leading-relaxed">
+        NotebookLM analizza documenti, libri di testo, paper scientifici e materiali didattici,
+        creando sintesi intelligenti, mappe concettuali e risposte precise con citazioni automatiche.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div className="space-y-6">
+        <div className="bg-white p-6 rounded-2xl shadow-lg border-l-6 border-green-500">
+          <h4 className="text-2xl font-bold text-green-800 mb-4 flex items-center gap-3">
+            <BookOpen className="w-7 h-7" />
+            Per i Docenti
+          </h4>
+          <div className="space-y-4">
+            <div className="bg-green-50 p-4 rounded-lg">
+              <h5 className="font-bold text-green-800 mb-2">📖 Preparazione Lezioni</h5>
+              <p className="text-green-700 text-sm">Carica manuali → ricevi sintesi, domande chiave, collegamenti interdisciplinari</p>
+            </div>
+            <div className="bg-green-50 p-4 rounded-lg">
+              <h5 className="font-bold text-green-800 mb-2">🔍 Ricerca Approfondita</h5>
+              <p className="text-green-700 text-sm">Analisi rapida di paper, articoli, normative scolastiche con citazioni precise</p>
+            </div>
+            <div className="bg-green-50 p-4 rounded-lg">
+              <h5 className="font-bold text-green-800 mb-2">✍️ Supporto Amministrativo</h5>
+              <p className="text-green-700 text-sm">Elabora documenti ministeriali, regolamenti, PEI in formato accessibile</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-6">
+        <div className="bg-white p-6 rounded-2xl shadow-lg border-l-6 border-purple-500">
+          <h4 className="text-2xl font-bold text-purple-800 mb-4 flex items-center gap-3">
+            <GraduationCap className="w-7 h-7" />
+            Per gli Studenti
+          </h4>
+          <div className="space-y-4">
+            <div className="bg-purple-50 p-4 rounded-lg">
+              <h5 className="font-bold text-purple-800 mb-2">📋 Studio Efficace</h5>
+              <p className="text-purple-700 text-sm">Riassunti automatici, schemi, domande di autoverifica personalizzate</p>
+            </div>
+            <div className="bg-purple-50 p-4 rounded-lg">
+              <h5 className="font-bold text-purple-800 mb-2">🎯 Tesine e Ricerche</h5>
+              <p className="text-purple-700 text-sm">Organizzazione fonti, generazione bibliografia, verifica coerenza argomentativa</p>
+            </div>
+            <div className="bg-purple-50 p-4 rounded-lg">
+              <h5 className="font-bold text-purple-800 mb-2">🤝 Studio di Gruppo</h5>
+              <p className="text-purple-700 text-sm">Notebook condivisi, annotazioni collaborative, brainstorming guidato</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-8 rounded-2xl">
+      <h4 className="text-3xl font-bold mb-6">🚀 Workflow NotebookLM in Classe</h4>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-white bg-opacity-20 p-6 rounded-xl">
+          <div className="text-3xl mb-4">1️⃣</div>
+          <h5 className="font-bold mb-2 text-lg">Upload & Setup</h5>
+          <p className="text-sm">Carica materiali didattici, crea notebook tematico, invita studenti</p>
+        </div>
+        <div className="bg-white bg-opacity-20 p-6 rounded-xl">
+          <div className="text-3xl mb-4">2️⃣</div>
+          <h5 className="font-bold mb-2 text-lg">Esplora & Analizza</h5>
+          <p className="text-sm">Poni domande, genera sintesi, crea mappe concettuali collaborative</p>
+        </div>
+        <div className="bg-white bg-opacity-20 p-6 rounded-xl">
+          <div className="text-3xl mb-4">3️⃣</div>
+          <h5 className="font-bold mb-2 text-lg">Condividi & Verifica</h5>
+          <p className="text-sm">Esporta contenuti in Classroom, crea quiz da insights, monitora comprensione</p>
+        </div>
+      </div>
+    </div>
+
+    <div className="bg-amber-50 p-6 rounded-2xl border-l-6 border-amber-400">
+      <div className="flex items-start gap-4">
+        <Lightbulb className="w-8 h-8 text-amber-600 flex-shrink-0 mt-1" />
+        <div>
+          <h4 className="text-2xl font-bold text-amber-800 mb-2">💎 Segreto del Successo</h4>
+          <p className="text-amber-700 text-lg leading-relaxed">
+            NotebookLM brilla quando alimentato con <strong>fonti di qualità</strong>: libri di testo ufficiali,
+            paper peer-reviewed, documenti istituzionali. Garbage in = garbage out, ma qualità in = magia out! ✨
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+// ===== BEST PRACTICES E SICUREZZA (46-48) =====
+
+const Slide46_Security_Privacy = () => (
   <div className="space-y-10">
     <h2 className="text-5xl font-bold text-gray-800 text-center">Sicurezza e Privacy: Best Practices</h2>
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -4125,7 +4544,7 @@ const Slide43_Security_Privacy = () => (
   </div>
 );
 
-const Slide44_Integration_Workflow = () => (
+const Slide47_Integration_Workflow = () => (
   <div className="space-y-10">
     <h2 className="text-5xl font-bold text-gray-800 text-center">Integrazione Completa: Workflow Educativi</h2>
     <div className="bg-gradient-to-r from-blue-500 to-green-500 text-white p-8 rounded-2xl mb-8">
@@ -4321,7 +4740,7 @@ const Slide44_Integration_Workflow = () => (
   </div>
 );
 
-const Slide45_Conclusion = () => (
+const Slide48_Conclusion = () => (
   <div className="space-y-10">
     <div className="text-center mb-10">
       <div className="flex items-center justify-center gap-4 mb-6">
@@ -4532,8 +4951,11 @@ const GoogleWorkspaceCourse = () => {
     { component: Slide03_Overview, title: "Cos'è Google Workspace?" },
     { component: Slide04_ToolsOverview, title: "Ecosistema Google Workspace" },
 
-    // Google Drive (5-8)
-    { component: Slide05_Drive_Intro, title: "Google Drive - Introduzione" },
+    // Google Groups (5)
+    { component: Slide05_GoogleGroups, title: "Gruppi Google: Fondamenta dell'Organizzazione" },
+
+    // Google Drive (6-9)
+    { component: Slide06_Drive_Intro, title: "Google Drive - Introduzione" },
     { component: Slide06_Drive_Organization, title: "Drive: Organizzazione Avanzata" },
     { component: Slide07_Drive_Sharing, title: "Drive: Condivisione e Permessi" },
     { component: Slide08_Drive_Advanced, title: "Drive: Ricerca e Workspaces" },
@@ -4590,10 +5012,15 @@ const GoogleWorkspaceCourse = () => {
     { component: Slide41_Sites_Portfolio, title: "Google Sites: Portfolio e Comunicazione" },
     { component: Slide42_Keep_Tasks_Productivity, title: "Keep & Tasks: Produttività Docente" },
 
-    // Best Practices e Conclusioni (43-45)
-    { component: Slide43_Security_Privacy, title: "Sicurezza e Privacy: Best Practices" },
-    { component: Slide44_Integration_Workflow, title: "Integrazione: Workflow Educativi" },
-    { component: Slide45_Conclusion, title: "Conclusioni e Prossimi Passi" }
+    // AI per l'Educazione (43-45)
+    { component: Slide43_AI_Overview, title: "AI per l'Educazione: Panoramica" },
+    { component: Slide44_Gemini_Education, title: "Gemini for Education" },
+    { component: Slide45_NotebookLM, title: "NotebookLM: Ricerca Intelligente" },
+
+    // Best Practices e Conclusioni (46-48)
+    { component: Slide46_Security_Privacy, title: "Sicurezza e Privacy: Best Practices" },
+    { component: Slide47_Integration_Workflow, title: "Integrazione: Workflow Educativi" },
+    { component: Slide48_Conclusion, title: "Conclusioni e Prossimi Passi" }
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -4606,9 +5033,6 @@ const GoogleWorkspaceCourse = () => {
     setCurrentSlide((s) => Math.max(s - 1, 0));
   };
 
-  const goToSlide = (index) => {
-    if (index >= 0 && index < slides.length) setCurrentSlide(index);
-  };
 
   const CurrentSlideComponent = slides[currentSlide].component;
 
