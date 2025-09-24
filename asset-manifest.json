@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/google-workspace-slides/static/css/main.18c65289.css",
-    "main.js": "/google-workspace-slides/static/js/main.a6252b40.js",
+    "main.css": "/google-workspace-slides/static/css/main.bb6a131d.css",
+    "main.js": "/google-workspace-slides/static/js/main.d894c15a.js",
     "static/js/453.a9ab6448.chunk.js": "/google-workspace-slides/static/js/453.a9ab6448.chunk.js",
     "index.html": "/google-workspace-slides/index.html",
-    "main.18c65289.css.map": "/google-workspace-slides/static/css/main.18c65289.css.map",
-    "main.a6252b40.js.map": "/google-workspace-slides/static/js/main.a6252b40.js.map",
+    "main.bb6a131d.css.map": "/google-workspace-slides/static/css/main.bb6a131d.css.map",
+    "main.d894c15a.js.map": "/google-workspace-slides/static/js/main.d894c15a.js.map",
     "453.a9ab6448.chunk.js.map": "/google-workspace-slides/static/js/453.a9ab6448.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.18c65289.css",
-    "static/js/main.a6252b40.js"
+    "static/css/main.bb6a131d.css",
+    "static/js/main.d894c15a.js"
   ]
 }
