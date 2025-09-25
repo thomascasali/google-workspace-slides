@@ -13,6 +13,7 @@ const Slide01_Title = () => (
       <p className="text-3xl text-gray-600">Strumenti digitali per la didattica moderna</p>
       <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl inline-block border-2 border-blue-200">
         <p className="text-2xl text-blue-800 font-semibold">Corso di formazione per docenti di scuola secondaria</p>
+        <p className="text-2xl text-green-500 font-semibold mt-4">&copy; Thomas Casali</p>
       </div>
     </div>
   </div>
@@ -88,36 +89,47 @@ const Slide03_Overview = () => (
   </div>
 );
 
-const Slide04_ToolsOverview = () => (
+const Slide04_ToolsOverview = ({ goToSlide }) => (
   <div className="space-y-8">
     <div className="text-center mb-10">
       <h2 className="text-5xl font-bold text-gray-800">Ecosistema Google Workspace</h2>
-      <p className="text-2xl text-gray-600 mt-4">14+ strumenti integrati per l'educazione digitale moderna</p>
+      <p className="text-2xl text-gray-600 mt-4">16 strumenti integrati per l'educazione digitale moderna</p>
+      <p className="text-lg text-gray-500 mt-2">🎯 <strong>Clicca su un tool</strong> per andare direttamente alla sua sezione</p>
     </div>
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {[
-        { icon: Users, name: "Gruppi", desc: "Organizzazione e permessi", color: "indigo", users: "Fondamenta del sistema", priority: 1 },
-        { icon: Folder, name: "Drive", desc: "Archiviazione cloud", color: "blue", users: "Storage illimitato", priority: 2 },
-        { icon: Mail, name: "Gmail", desc: "Email professionale", color: "red", users: "15GB gratuiti", priority: 3 },
-        { icon: Calendar, name: "Calendar", desc: "Calendario condiviso", color: "blue", users: "Pianificazione integrata", priority: 4 },
-        { icon: MessageCircle, name: "Chat", desc: "Messaggistica", color: "green", users: "Comunicazione real-time", priority: 5 },
-        { icon: FileText, name: "Docs", desc: "Documenti di testo", color: "blue", users: "Editing collaborativo" },
-        { icon: BarChart3, name: "Sheets", desc: "Fogli di calcolo", color: "green", users: "Analisi dati" },
-        { icon: Presentation, name: "Slides", desc: "Presentazioni", color: "yellow", users: "Lezioni interattive" },
-        { icon: FileQuestion, name: "Forms", desc: "Quiz e sondaggi", color: "purple", users: "Valutazione automatica" },
-        { icon: Video, name: "Meet", desc: "Videoconferenze", color: "green", users: "Fino a 250 partecipanti" },
-        { icon: GraduationCap, name: "Classroom", desc: "Gestione classi", color: "green", users: "LMS completo" },
-        { icon: Globe, name: "Sites", desc: "Siti web", color: "blue", users: "Senza programmazione" },
-        { icon: StickyNote, name: "Keep", desc: "Note e promemoria", color: "yellow", users: "Sincronizzazione totale" },
-        { icon: Star, name: "Gemini AI", desc: "Assistente didattico", color: "purple", users: "Potenziato dall'IA" }
+        { icon: Users, name: "Gruppi", desc: "Organizzazione e permessi", color: "indigo", users: "Fondamenta del sistema", priority: 1, slideNumber: 5 },
+        { icon: Folder, name: "Drive", desc: "Archiviazione cloud", color: "blue", users: "Storage illimitato", priority: 2, slideNumber: 6 },
+        { icon: Mail, name: "Gmail", desc: "Email professionale", color: "red", users: "15GB gratuiti", priority: 3, slideNumber: 10 },
+        { icon: Calendar, name: "Calendar", desc: "Calendario condiviso", color: "blue", users: "Pianificazione integrata", priority: 4, slideNumber: 14 },
+        { icon: MessageCircle, name: "Chat", desc: "Messaggistica", color: "green", users: "Comunicazione real-time", priority: 5, slideNumber: 18 },
+        { icon: FileText, name: "Docs", desc: "Documenti di testo", color: "blue", users: "Editing collaborativo", slideNumber: 22 },
+        { icon: BarChart3, name: "Sheets", desc: "Fogli di calcolo", color: "green", users: "Analisi dati", slideNumber: 26 },
+        { icon: Presentation, name: "Slides", desc: "Presentazioni", color: "yellow", users: "Lezioni interattive", slideNumber: 30 },
+        { icon: FileQuestion, name: "Forms", desc: "Quiz e sondaggi", color: "purple", users: "Valutazione automatica", slideNumber: 34 },
+        { icon: Video, name: "Meet", desc: "Videoconferenze", color: "green", users: "Fino a 250 partecipanti", slideNumber: 36 },
+        { icon: GraduationCap, name: "Classroom", desc: "Gestione classi", color: "green", users: "LMS completo", slideNumber: 39 },
+        { icon: Globe, name: "Sites", desc: "Siti web", color: "blue", users: "Senza programmazione", slideNumber: 44 },
+        { icon: StickyNote, name: "Keep", desc: "Note e promemoria", color: "yellow", users: "Sincronizzazione totale", slideNumber: 45 },
+        { icon: Star, name: "Gemini AI", desc: "Assistente didattico", color: "purple", users: "Potenziato dall'IA", slideNumber: 46 },
+        { icon: BookOpen, name: "NotebookLM", desc: "Ricerca intelligente", color: "blue", users: "AI per la ricerca", slideNumber: 48 },
+        { icon: Shield, name: "Best Practices", desc: "Sicurezza e integrazione", color: "red", users: "Workflow avanzati", slideNumber: 49 }
       ].map((tool, index) => (
-        <div key={index} className={`bg-white border-3 border-gray-200 p-6 rounded-2xl hover:shadow-2xl transition-all hover:border-blue-300 hover:scale-105 ${tool.priority ? 'ring-2 ring-blue-200' : ''}`}>
+        <div
+          key={index}
+          onClick={() => tool.slideNumber && goToSlide(tool.slideNumber)}
+          className={`bg-white border-3 border-gray-200 p-6 rounded-2xl hover:shadow-2xl transition-all hover:border-blue-300 hover:scale-105 ring-2 ring-blue-100 hover:ring-blue-200 ${tool.slideNumber ? 'cursor-pointer' : ''} relative`}
+        >
           <div className="text-center">
-            {tool.priority && <div className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full mb-2 inline-block">Priorità {tool.priority}</div>}
             <tool.icon className={`w-12 h-12 mx-auto mb-4 text-${tool.color}-600`} />
             <h3 className="font-bold text-gray-800 text-xl mb-2">{tool.name}</h3>
             <p className="text-sm text-gray-600 mb-2">{tool.desc}</p>
-            <p className="text-xs text-blue-600 font-semibold">{tool.users}</p>
+            <p className="text-xs text-blue-600 font-semibold mb-3">{tool.users}</p>
+            {tool.slideNumber && (
+              <div className="text-xs text-gray-400 border-t border-gray-100 pt-2 mt-2">
+                📋 Slide {tool.slideNumber}
+              </div>
+            )}
           </div>
         </div>
       ))}
@@ -827,16 +839,16 @@ const Slide14_Calendar_Advanced = () => (
         </div>
         <div className="space-y-4">
           <div className="bg-white p-3 rounded-lg">
-            <code className="text-sm">cal.new</code>
+            <code className="text-sm">Premi "C" nella tastiera</code>
             <p className="text-xs text-gray-600">Crea nuovo evento istantaneo</p>
           </div>
           <div className="bg-white p-3 rounded-lg">
-            <code className="text-sm">"2PM Lezione Storia"</code>
-            <p className="text-xs text-gray-600">Evento automatico alle 14:00</p>
+            <code className="text-sm">[Titolo] alle [Ora]</code>
+            <p className="text-xs text-gray-600">Creare evento e ora</p>
           </div>
           <div className="bg-white p-3 rounded-lg">
-            <code className="text-sm">"Riunione domani 9-10"</code>
-            <p className="text-xs text-gray-600">Evento giorno successivo</p>
+            <code className="text-sm">[Titolo] [Giorno] alle [Ora]</code>
+            <p className="text-xs text-gray-600">Aggiungere data e ora</p>
           </div>
         </div>
       </div>
@@ -2765,7 +2777,6 @@ const Slide32_Slides_Advanced = () => (
         <ul className="space-y-3 text-blue-700 text-sm">
           <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4" />PDF per stampa e lettura</li>
           <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4" />PowerPoint (.pptx) compatibilità</li>
-          <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4" />Video MP4 per condivisione social</li>
           <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4" />Immagini PNG/JPG singole slide</li>
           <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4" />HTML per siti web</li>
         </ul>
@@ -2898,9 +2909,200 @@ const Slide32_Slides_Advanced = () => (
   </div>
 );
 
-// ===== GOOGLE MEET SLIDES (33-35) =====
+// ===== GOOGLE FORMS SLIDES (33-34) =====
 
-const Slide33_Meet_Intro = () => (
+const Slide33_Forms_Intro = () => (
+  <div className="space-y-10">
+    <div className="flex items-center gap-8 mb-8">
+      <FileQuestion className="w-24 h-24 text-purple-500" />
+      <div>
+        <h1 className="text-6xl font-bold text-gray-800">Google Forms</h1>
+        <p className="text-3xl text-gray-600">Quiz, sondaggi e valutazione automatica</p>
+      </div>
+    </div>
+
+    <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl shadow-lg">
+      <h3 className="text-4xl font-bold text-purple-800 mb-6">🎯 Perché Forms in Educazione?</h3>
+      <p className="text-xl text-purple-700 leading-relaxed">
+        Google Forms trasforma la valutazione scolastica: quiz autocorrettivi, sondaggi di gradimento,
+        raccolta dati per ricerche scolastiche, tutto con correzione automatica e feedback istantaneo.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div className="bg-white p-8 rounded-2xl shadow-lg border-l-8 border-purple-500">
+        <h3 className="text-3xl font-bold text-purple-800 mb-6 flex items-center gap-3">
+          <CheckCircle className="w-8 h-8" />
+          Tipologie di Quiz
+        </h3>
+        <div className="space-y-4">
+          <div className="bg-purple-50 p-4 rounded-xl">
+            <h4 className="font-bold text-purple-800 mb-2">📝 Scelta Multipla</h4>
+            <p className="text-purple-700">Ideale per verifiche rapide con correzione automatica</p>
+          </div>
+          <div className="bg-blue-50 p-4 rounded-xl">
+            <h4 className="font-bold text-blue-800 mb-2">✏️ Risposta Breve</h4>
+            <p className="text-blue-700">Per definizioni, calcoli matematici, risposte precise</p>
+          </div>
+          <div className="bg-green-50 p-4 rounded-xl">
+            <h4 className="font-bold text-green-800 mb-2">📊 Scale e Rating</h4>
+            <p className="text-green-700">Sondaggi di gradimento, autovalutazione, feedback</p>
+          </div>
+          <div className="bg-orange-50 p-4 rounded-xl">
+            <h4 className="font-bold text-orange-800 mb-2">📋 Lungo Testo</h4>
+            <p className="text-orange-700">Temi, riflessioni, domande aperte approfondite</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white p-8 rounded-2xl shadow-lg border-l-8 border-green-500">
+        <h3 className="text-3xl font-bold text-green-800 mb-6 flex items-center gap-3">
+          <Zap className="w-8 h-8" />
+          Funzionalità Smart
+        </h3>
+        <ul className="space-y-4 text-green-700">
+          <li className="flex items-start gap-3 text-lg">
+            <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+            <span><strong>Correzione automatica:</strong> Risparmia ore di correzione manuale</span>
+          </li>
+          <li className="flex items-start gap-3 text-lg">
+            <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+            <span><strong>Feedback istantaneo:</strong> Gli studenti vedono subito il punteggio</span>
+          </li>
+          <li className="flex items-start gap-3 text-lg">
+            <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+            <span><strong>Logica condizionale:</strong> Domande che si adattano alle risposte</span>
+          </li>
+          <li className="flex items-start gap-3 text-lg">
+            <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+            <span><strong>Randomizzazione:</strong> Ordine casuale per prevenire copiature</span>
+          </li>
+          <li className="flex items-start gap-3 text-lg">
+            <CheckCircle className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
+            <span><strong>Timer e scadenze:</strong> Limiti di tempo configurabili</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-8 rounded-2xl">
+      <h4 className="text-3xl font-bold mb-4">💡 Pro Tips per Docenti</h4>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h5 className="font-bold mb-3 text-lg">🎯 Setup Efficace:</h5>
+          <ul className="text-sm space-y-2">
+            <li>• Usa sezioni per organizzare argomenti diversi</li>
+            <li>• Imposta il punteggio massimo per ogni domanda</li>
+            <li>• Configura feedback personalizzato per ogni risposta</li>
+            <li>• Abilita "Mostra punteggio immediatamente"</li>
+          </ul>
+        </div>
+        <div>
+          <h5 className="font-bold mb-3 text-lg">📊 Analisi Risultati:</h5>
+          <ul className="text-sm space-y-2">
+            <li>• Usa il collegamento a Sheets per analisi avanzate</li>
+            <li>• Monitora il "Riepilogo" per identificare domande difficili</li>
+            <li>• Esporta i risultati per conservare storico valutazioni</li>
+            <li>• Condividi statistiche anonime con la classe</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const Slide34_Forms_Advanced = () => (
+  <div className="space-y-10">
+    <h2 className="text-5xl font-bold text-gray-800 text-center mb-8">Forms: Funzionalità Avanzate</h2>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl shadow-lg">
+        <h3 className="text-3xl font-bold text-indigo-800 mb-6 flex items-center gap-3">
+          <Settings className="w-8 h-8" />
+          Configurazioni Pro
+        </h3>
+        <div className="space-y-6">
+          <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-indigo-500">
+            <h4 className="text-xl font-bold text-gray-800 mb-3">🔀 Logica Condizionale</h4>
+            <p className="text-gray-700 mb-3">Le domande successive si adattano alle risposte precedenti</p>
+            <div className="bg-indigo-50 p-3 rounded-lg text-sm">
+              <strong>Esempio:</strong> Se risposta = "Sì" → vai a Sezione 2, se "No" → vai a Sezione 3
+            </div>
+          </div>
+
+          <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-purple-500">
+            <h4 className="text-xl font-bold text-gray-800 mb-3">⏱️ Controllo Tempo</h4>
+            <p className="text-gray-700 mb-3">Imposta durata massima per quiz cronometrati</p>
+            <div className="bg-purple-50 p-3 rounded-lg text-sm">
+              <strong>Consiglio:</strong> 1-2 minuti per domanda di scelta multipla, 5-10 per domande aperte
+            </div>
+          </div>
+
+          <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-pink-500">
+            <h4 className="text-xl font-bold text-gray-800 mb-3">🎲 Randomizzazione</h4>
+            <p className="text-gray-700 mb-3">Mescola domande e opzioni per prevenire copiature</p>
+            <div className="bg-pink-50 p-3 rounded-lg text-sm">
+              <strong>Attiva:</strong> Impostazioni → Presenta domande in ordine casuale
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-2xl shadow-lg">
+        <h3 className="text-3xl font-bold text-green-800 mb-6 flex items-center gap-3">
+          <BarChart3 className="w-8 h-8" />
+          Analisi e Feedback
+        </h3>
+        <div className="space-y-6">
+          <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-green-500">
+            <h4 className="text-xl font-bold text-gray-800 mb-3">📊 Dashboard Automatico</h4>
+            <ul className="text-gray-700 space-y-2">
+              <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" />Punteggio medio classe</li>
+              <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" />Domande più sbagliate</li>
+              <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" />Tempo medio di completamento</li>
+              <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-500" />Grafici di distribuzione</li>
+            </ul>
+          </div>
+
+          <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-500">
+            <h4 className="text-xl font-bold text-gray-800 mb-3">🔍 Feedback Intelligente</h4>
+            <p className="text-gray-700 mb-3">Personalizza messaggi basati sul punteggio ottenuto</p>
+            <div className="bg-blue-50 p-3 rounded-lg text-sm space-y-1">
+              <div><strong>90-100%:</strong> "Eccellente! Hai padroneggiato l'argomento"</div>
+              <div><strong>70-89%:</strong> "Buon lavoro! Rivedere paragrafi X e Y"</div>
+              <div><strong>&lt;70%:</strong> "Ti consiglio di ripassare prima del prossimo test"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-8 rounded-2xl">
+      <h4 className="text-3xl font-bold mb-6">🚀 Workflow Forms + Classroom</h4>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-white bg-opacity-20 p-6 rounded-xl">
+          <div className="text-3xl mb-4">1️⃣</div>
+          <h5 className="font-bold mb-2 text-lg">Crea in Classroom</h5>
+          <p className="text-sm">Crea compito → Allega Forms → Imposta scadenza automaticamente</p>
+        </div>
+        <div className="bg-white bg-opacity-20 p-6 rounded-xl">
+          <div className="text-3xl mb-4">2️⃣</div>
+          <h5 className="font-bold mb-2 text-lg">Studenti Completano</h5>
+          <p className="text-sm">Accesso diretto dal compito, invio automatico a completamento</p>
+        </div>
+        <div className="bg-white bg-opacity-20 p-6 rounded-xl">
+          <div className="text-3xl mb-4">3️⃣</div>
+          <h5 className="font-bold mb-2 text-lg">Voti Automatici</h5>
+          <p className="text-sm">Punteggi sincronizzati in Classroom, feedback immediato</p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+// ===== GOOGLE MEET SLIDES (35-37) =====
+
+const Slide35_Meet_Intro = () => (
   <div className="space-y-10">
     <div className="flex items-center gap-8 mb-8">
       <Video className="w-24 h-24 text-green-600" />
@@ -2938,7 +3140,7 @@ const Slide33_Meet_Intro = () => (
   </div>
 );
 
-const Slide34_Meet_Features = () => (
+const Slide36_Meet_Features = () => (
   <div className="space-y-10">
     <h2 className="text-5xl font-bold text-gray-800 text-center">Meet: Funzionalità Educative</h2>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -3059,7 +3261,7 @@ const Slide34_Meet_Features = () => (
   </div>
 );
 
-const Slide35_Meet_BestPractices = () => (
+const Slide37_Meet_BestPractices = () => (
   <div className="space-y-10">
     <h2 className="text-5xl font-bold text-gray-800 text-center">Meet: Best Practices Educative</h2>
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -3210,7 +3412,7 @@ const Slide35_Meet_BestPractices = () => (
 
 // ===== GOOGLE CLASSROOM SLIDES (36-39) =====
 
-const Slide36_Classroom_Intro = () => (
+const Slide38_Classroom_Intro = () => (
   <div className="space-y-10">
     <div className="flex items-center gap-8 mb-8">
       <GraduationCap className="w-24 h-24 text-green-600" />
@@ -3248,7 +3450,7 @@ const Slide36_Classroom_Intro = () => (
   </div>
 );
 
-const Slide37_Classroom_Management = () => (
+const Slide39_Classroom_Management = () => (
   <div className="space-y-10">
     <h2 className="text-5xl font-bold text-gray-800 text-center">Classroom: Gestione Corso</h2>
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -3412,7 +3614,7 @@ const Slide37_Classroom_Management = () => (
   </div>
 );
 
-const Slide38_Classroom_Assignments = () => (
+const Slide40_Classroom_Assignments = () => (
   <div className="space-y-10">
     <h2 className="text-5xl font-bold text-gray-800 text-center">Classroom: Compiti e Valutazione</h2>
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -3563,7 +3765,7 @@ const Slide38_Classroom_Assignments = () => (
   </div>
 );
 
-const Slide39_Classroom_Integration = () => (
+const Slide41_Classroom_Integration = () => (
   <div className="space-y-10">
     <h2 className="text-5xl font-bold text-gray-800 text-center">Classroom: Ecosistema Integrato</h2>
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -4996,16 +5198,20 @@ const GoogleWorkspaceCourse = () => {
     { component: Slide31_Slides_Collaboration, title: "Slides: Progetti Collaborativi" },
     { component: Slide32_Slides_Advanced, title: "Slides: Funzionalità Avanzate" },
 
-    // Google Meet (33-35)
-    { component: Slide33_Meet_Intro, title: "Google Meet - Introduzione" },
-    { component: Slide34_Meet_Features, title: "Meet: Funzionalità Educative" },
-    { component: Slide35_Meet_BestPractices, title: "Meet: Best Practices" },
+    // Google Forms (33-34)
+    { component: Slide33_Forms_Intro, title: "Google Forms - Introduzione" },
+    { component: Slide34_Forms_Advanced, title: "Forms: Funzionalità Avanzate" },
 
-    // Google Classroom (36-39)
-    { component: Slide36_Classroom_Intro, title: "Google Classroom - Introduzione" },
-    { component: Slide37_Classroom_Management, title: "Classroom: Gestione Corso" },
-    { component: Slide38_Classroom_Assignments, title: "Classroom: Compiti e Valutazione" },
-    { component: Slide39_Classroom_Integration, title: "Classroom: Ecosistema Integrato" },
+    // Google Meet (35-37)
+    { component: Slide35_Meet_Intro, title: "Google Meet - Introduzione" },
+    { component: Slide36_Meet_Features, title: "Meet: Funzionalità Educative" },
+    { component: Slide37_Meet_BestPractices, title: "Meet: Best Practices" },
+
+    // Google Classroom (38-41)
+    { component: Slide38_Classroom_Intro, title: "Google Classroom - Introduzione" },
+    { component: Slide39_Classroom_Management, title: "Classroom: Gestione Corso" },
+    { component: Slide40_Classroom_Assignments, title: "Classroom: Compiti e Valutazione" },
+    { component: Slide41_Classroom_Integration, title: "Classroom: Ecosistema Integrato" },
 
     // Strumenti Complementari (40-42)
     { component: Slide40_Sites_Keep_Tasks_Intro, title: "Sites, Keep, Tasks - Introduzione" },
@@ -5024,6 +5230,7 @@ const GoogleWorkspaceCourse = () => {
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [jumpToSlide, setJumpToSlide] = useState('');
 
   const nextSlide = () => {
     setCurrentSlide((s) => Math.min(s + 1, slides.length - 1));
@@ -5031,6 +5238,20 @@ const GoogleWorkspaceCourse = () => {
 
   const prevSlide = () => {
     setCurrentSlide((s) => Math.max(s - 1, 0));
+  };
+
+  const goToSlide = (slideNumber) => {
+    const slideIndex = Math.max(0, Math.min(slideNumber - 1, slides.length - 1));
+    setCurrentSlide(slideIndex);
+  };
+
+  const handleJumpToSlide = (e) => {
+    e.preventDefault();
+    const slideNum = parseInt(jumpToSlide);
+    if (!isNaN(slideNum) && slideNum >= 1 && slideNum <= slides.length) {
+      goToSlide(slideNum);
+      setJumpToSlide('');
+    }
   };
 
 
@@ -5076,23 +5297,51 @@ const GoogleWorkspaceCourse = () => {
       {/* Slide content */}
       <main className="flex-1 max-w-7xl mx-auto p-6 w-full">
         <div className="bg-white rounded-lg shadow-sm min-h-[70vh] p-8">
-          <CurrentSlideComponent />
+          {currentSlide === 3 ? ( // Slide04_ToolsOverview è l'indice 3 (slide numero 4)
+            <CurrentSlideComponent goToSlide={goToSlide} />
+          ) : (
+            <CurrentSlideComponent />
+          )}
         </div>
       </main>
 
       {/* Footer navigation */}
       <footer className="bg-white border-t">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="text-sm text-gray-600">Corso di Formazione Google Workspace for Education | {slides.length} slide totali</div>
-          <div className="flex items-center gap-4">
-            <button onClick={prevSlide} disabled={currentSlide === 0} className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 disabled:opacity-50 rounded-lg">
-              <ChevronLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">Precedente</span>
-            </button>
-            <button onClick={nextSlide} disabled={currentSlide === slides.length - 1} className="flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 disabled:opacity-50 text-white rounded-lg">
-              <span className="hidden sm:inline">Successiva</span>
-              <ChevronRight className="w-4 h-4" />
-            </button>
+        <div className="max-w-7xl mx-auto px-4 py-4">
+          <div className="flex items-center justify-between mb-3">
+            <div className="text-sm text-gray-600">Corso di Formazione Google Workspace for Education | {slides.length} slide totali</div>
+            <div className="flex items-center gap-4">
+              <button onClick={prevSlide} disabled={currentSlide === 0} className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 disabled:opacity-50 rounded-lg">
+                <ChevronLeft className="w-4 h-4" />
+                <span className="hidden sm:inline">Precedente</span>
+              </button>
+              <button onClick={nextSlide} disabled={currentSlide === slides.length - 1} className="flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 disabled:opacity-50 text-white rounded-lg">
+                <span className="hidden sm:inline">Successiva</span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          {/* Navigazione diretta */}
+          <div className="flex items-center justify-center">
+            <form onSubmit={handleJumpToSlide} className="flex items-center gap-2">
+              <span className="text-sm text-gray-600">Vai alla slide:</span>
+              <input
+                type="number"
+                min="1"
+                max={slides.length}
+                value={jumpToSlide}
+                onChange={(e) => setJumpToSlide(e.target.value)}
+                placeholder="1-51"
+                className="w-16 px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <button
+                type="submit"
+                className="px-3 py-1 text-sm bg-green-500 hover:bg-green-600 text-white rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+              >
+                Vai
+              </button>
+            </form>
           </div>
         </div>
       </footer>
