@@ -5263,7 +5263,11 @@ const GoogleWorkspaceCourse = () => {
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Home className="w-6 h-6 text-blue-600" />
+            <Home
+              className="w-6 h-6 text-blue-600 cursor-pointer hover:text-blue-800 transition-colors"
+              onClick={() => setCurrentSlide(3)} // Slide 4 (index 3)
+              title="Vai all'indice degli strumenti"
+            />
             <div>
               <h1 className="text-xl font-bold text-gray-900">Google Workspace for Education</h1>
               <div className="text-sm text-gray-600">Slide {currentSlide + 1} di {slides.length} — {slides[currentSlide].title}</div>
